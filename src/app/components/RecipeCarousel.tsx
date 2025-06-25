@@ -26,6 +26,7 @@ type Recipe = {
   excerpt: { rendered: string };
   acf?: {
     time?: string;
+    rate_media?: string;
   };
 };
 
