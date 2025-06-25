@@ -1,7 +1,6 @@
-// src/app/posts/[slug]/page.tsx
 import { getPostBySlug } from '../../../lib/wordpress';
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
+export default async function PostPage({ params }) {
   const post = await getPostBySlug(params.slug);
 
   if (!post) {

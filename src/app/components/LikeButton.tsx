@@ -8,7 +8,7 @@ export default function LikeButton({
   initialLikes = 0,
 }: {
   postId: number;
-  initialLikes: number;
+  initialLikes?: number; // ← agora é opcional!
 }) {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(initialLikes);

@@ -12,7 +12,12 @@ type Recipe = {
   id: number;
   title: { rendered: string };
   _embedded: {
-    author: { name: string }[];
+    author: {
+      name: string;
+      avatar_urls: {
+        [key: string]: string;
+      };
+    }[];
     'wp:featuredmedia': { source_url: string }[];
   };
   slug: string;
@@ -23,6 +28,7 @@ type Recipe = {
     time?: string;
   };
 };
+
 
 export default function RecipeCarousel({ recipes }: { recipes: Recipe[] }) {
   return (
