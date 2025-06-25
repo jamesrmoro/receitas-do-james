@@ -3,12 +3,12 @@ import StarRating from '../../components/StarRating';
 
 export const dynamic = 'force-dynamic';
 
-export default async function Page({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const slug = params.slug;
+type PageProps = {
+  params: Promise<{ slug: string }>; // params agora é uma Promise
+};
+
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params; // await necessário!
 
   let post = null;
 
@@ -34,8 +34,8 @@ export default async function Page({
   }
 
   return (
-    <main style={{ maxWidth: '720px', margin: '0 auto', padding: '1rem' }}>
-      <h1>{post.title.rendered}</h1>
+    <main style={{ maxWidth: '720px', margin: '0 auto', padding: '2rem' }}>
+      <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
       <article dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
       <StarRating postId={post.id} />
     </main>
