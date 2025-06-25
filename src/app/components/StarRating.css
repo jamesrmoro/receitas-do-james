@@ -1,0 +1,50 @@
+.star-rating {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.star-rating p {
+
+  padding: 0;
+  margin: 0;
+}
+
+.stars {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.star {
+    display: flex;
+    font-size: 2rem;
+    color: #ccc;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 35px;
+    height: 30px;
+    transition: color 0.2s;
+    align-items: center;
+    justify-content: center;
+}
+
+.star.filled {
+  color: #f1bf04;
+}
+
+.star.half::before {
+  content: '★';
+  color: #f1bf04;
+  position: absolute;
+  width: 50%;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+}
+
+.media {
+  font-weight: bold;
+  color: #555;
+}

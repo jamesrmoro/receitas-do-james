@@ -59,7 +59,9 @@ export default function RecipeCarousel({ recipes }: { recipes: Recipe[] }) {
                           style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                         />
                       )}
-                      <span>⭐ 4,8</span>
+                      {recipe.acf?.rate_media && (
+                        <span>⭐ {parseFloat(recipe.acf.rate_media).toFixed(1)}</span>
+                      )}
 
                     </div>
                     <div className="recipe-body">
