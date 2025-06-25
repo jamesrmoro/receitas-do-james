@@ -1,0 +1,50 @@
+.like-button {
+    display: grid;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: opacity 0.2s;
+    grid-template-columns: auto 20px;
+}
+
+.like-button.liked .red {
+  fill: #e0245e;
+}
+
+.heart-icon {
+  width: 25px;
+  height: 23px;
+  fill: none;
+  stroke: #e0245e;
+  stroke-width: 2;
+  transition: transform 0.2s ease;
+}
+
+.heart-icon.red {
+    position: absolute;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    stroke: none;
+    pointer-events: none;
+}
+
+.heart-icon.stroke {
+  position: absolute;
+  left: 26px;
+  width: 25px;
+  height: 23px;
+  fill: none;
+  stroke: #e0245e;
+  pointer-events: none;
+}
+
+.like-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  min-width: 20px;
+}
