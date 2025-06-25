@@ -12,7 +12,8 @@
     "@mojs/core": "^1.7.1",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "swiper": "^11.1.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
