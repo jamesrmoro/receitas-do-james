@@ -1,13 +1,13 @@
 import { getPostBySlug } from '../../../lib/wordpress';
 import StarRating from '../../components/StarRating';
-import { type Metadata, type GetStaticPropsContext } from 'next';
-import type { PageProps } from 'next';
 
-type Props = PageProps<{
-  slug: string;
-}>;
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
 
-export default async function PostPage({ params }: Props) {
+export default async function Page({ params }: PageProps ) {
   const { slug } = params;
 
   let post = null;
@@ -34,7 +34,7 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <main style={{ maxWidth: '720px' }}>
+    <main style={{ maxWidth: '720px', margin: '0 auto', padding: '1rem' }}>
       <h1>{post.title.rendered}</h1>
       <article dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
       <StarRating postId={post.id} />
