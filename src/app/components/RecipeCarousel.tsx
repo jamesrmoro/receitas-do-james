@@ -34,8 +34,8 @@ export default function RecipeCarousel({ recipes }: { recipes: Recipe[] }) {
   return (
     <section className="carousel-section">
       <div className="carousel-header">
-        <h2>Trending Now🔥</h2>
-        <a href="#">See all →</a>
+        <h2>Recentes 🔥</h2>
+        <a href="#">Ver todas →</a>
       </div>
 
       <div className="carousel-container">
