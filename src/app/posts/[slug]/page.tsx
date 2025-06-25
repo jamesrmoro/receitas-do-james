@@ -1,13 +1,13 @@
 import { getPostBySlug } from '../../../lib/wordpress';
 import StarRating from '../../components/StarRating';
+import { type Metadata, type GetStaticPropsContext } from 'next';
+import type { PageProps } from 'next';
 
-type PostPageProps = {
-  params: {
-    slug: string;
-  };
-};
+type Props = PageProps<{
+  slug: string;
+}>;
 
-export default async function PostPage({ params }: PostPageProps) {
+export default async function PostPage({ params }: Props) {
   const { slug } = params;
 
   let post = null;
