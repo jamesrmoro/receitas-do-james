@@ -34,7 +34,7 @@ export default async function Page({ params }: PageProps) {
   }
 
   return (
-    <main style={{ maxWidth: '720px', margin: '0 auto', padding: '2rem' }}>
+    <main style={{ maxWidth: '720px', margin: '0 auto' }}>
       <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
       <article dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
       <StarRating postId={post.id} />
