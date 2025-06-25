@@ -25,16 +25,16 @@
 
 .heart-icon.red {
     position: absolute;
-    right: -5px;
-    width: 24px;
-    height: 24px;
+    right: 1px;
+    width: 25px;
+    height: 23px;
     stroke: none;
     pointer-events: none;
 }
 
 .heart-icon.stroke {
   position: absolute;
-  left: 26px;
+  right: 1px;
   width: 25px;
   height: 23px;
   fill: none;
