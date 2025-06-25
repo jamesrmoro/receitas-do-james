@@ -1,13 +1,7 @@
 import { getPostBySlug } from '../../../lib/wordpress';
 import StarRating from '../../components/StarRating';
 
-type PageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-export default async function Page({ params }: PageProps ) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
   let post = null;
