@@ -1,22 +1,16 @@
+// src/app/posts/[slug]/page.tsx
+
 import { getPostBySlug } from '../../../lib/wordpress';
 import StarRating from '../../components/StarRating';
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+type PageProps = {
+  params: { slug: string };
+};
 
-  let post = null;
+export default async function Page({ params }: PageProps) {
+  const slug = params.slug;
 
-  try {
-    post = await getPostBySlug(slug);
-  } catch (error) {
-    console.error('Erro ao buscar o post:', error);
-    return (
-      <main>
-        <h1>Serviço temporariamente indisponível</h1>
-        <p>O site de conteúdo está fora do ar no momento. Por favor, tente novamente mais tarde.</p>
-      </main>
-    );
-  }
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     return (
